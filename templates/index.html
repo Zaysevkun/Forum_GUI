@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+<!--<form method="POST" action="create/">
+        {% csrf_token %}
+        <p>
+            <label>Введите имя</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите id</label><br>
+            <input type="text" name="id" />
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>-->
+    <h2>Категории</h2>
+        {% for i in categories %}
+                    <a href="{% url 'category_page' pk=i.pk %}">{{ i.name }}</a><br>
+        {% endfor %}
+<a href="{% url 'zapros' %}"><h2>Запрос</h2></a>
+</body>
+</html>

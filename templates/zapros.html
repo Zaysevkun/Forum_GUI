@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<header>
+    <a href="/">Home</a>
+</header>
+<body>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Category</td>
+        <td>Last Message</td>
+        <td>Author</td>
+        <td>Posted At</td>
+    </tr>
+    {% for i in output %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.categ }}</td>
+            <td>{{ i.text }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.posted_at }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<p>{{ test }}</p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<header>
+    <a href="/">Home</a>
+</header>
+<body>
+{% for i in categories %}
+    <a href="{% url 'category_page' pk=i.pk %}">{{ i.name }}</a><br>
+{% endfor %}
+{% for i in messages %}
+    <div>
+        {{ i.author.name }}:<br>
+        {{ i.text }}
+    </div><br>
+{% endfor %}
+<form method="POST" action="{% url 'send_message' %}">
+        {% csrf_token %}
+        <p>
+            <label>Сообщение</label><br>
+            <input type="text" name="text" />
+            <input type="hidden" name="category" value="{{ pk }}"/>
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+</html>
