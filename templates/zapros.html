@@ -2,30 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>Title</title>
 </head>
 <header>
     <a href="/">Home</a>
 </header>
 <body>
-<table>
+<table class="table">
+<thead>
     <tr>
-        <td>Id</td>
+
         <td>Category</td>
         <td>Last Message</td>
         <td>Author</td>
         <td>Posted At</td>
     </tr>
+</thead>
+<tbody>
     {% for i in output %}
         <tr>
-            <td>{{ i.id }}</td>
+
             <td>{{ i.categ }}</td>
             <td>{{ i.text }}</td>
             <td>{{ i.name }}</td>
             <td>{{ i.posted_at }}</td>
         </tr>
     {% endfor %}
+</tbody>
 </table>
-<p>{{ test }}</p>
 </body>
 </html>

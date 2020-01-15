@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>Title</title>
 </head>
 <header>
@@ -12,9 +14,11 @@
     <a href="{% url 'category_page' pk=i.pk %}">{{ i.name }}</a><br>
 {% endfor %}
 {% for i in messages %}
-    <div>
+    <div class="card">
+        <div class="card-body">
         {{ i.author.name }}:<br>
         {{ i.text }}
+        </div>
     </div><br>
 {% endfor %}
 <form method="POST" action="{% url 'send_message' %}">
@@ -24,7 +28,7 @@
             <input type="text" name="text" />
             <input type="hidden" name="category" value="{{ pk }}"/>
         </p>
-        <input type="submit" value="Сохранить" >
+        <input type="submit" value="Отправить" >
     </form>
 </body>
 </html>

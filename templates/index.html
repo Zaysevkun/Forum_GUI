@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>Title</title>
 </head>
 <body>
@@ -18,10 +19,12 @@
         </p>
         <input type="submit" value="Сохранить" >
     </form>-->
+<div>
     <h2>Категории</h2>
         {% for i in categories %}
                     <a href="{% url 'category_page' pk=i.pk %}">{{ i.name }}</a><br>
         {% endfor %}
 <a href="{% url 'zapros' %}"><h2>Запрос</h2></a>
+</div>
 </body>
 </html>
